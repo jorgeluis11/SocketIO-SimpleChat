@@ -1,0 +1,74 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install' ]
+2 info using npm@1.2.14
+3 info using node@v0.10.0
+4 verbose node symlink /usr/bin/node
+5 verbose read json /home/jorgeluis/Desktop/socket/package.json
+6 warn package.json app.js@0.0.1 No README.md file found!
+7 verbose readDependencies using package.json deps
+8 verbose install where, deps [ '/home/jorgeluis/Desktop/socket', [ 'express', 'socketio' ] ]
+9 verbose from cache /home/jorgeluis/Desktop/socket/package.json
+10 info preinstall app.js@0.0.1
+11 verbose read json /home/jorgeluis/Desktop/socket/node_modules/express/package.json
+12 verbose from cache /home/jorgeluis/Desktop/socket/package.json
+13 verbose readDependencies using package.json deps
+14 verbose from cache /home/jorgeluis/Desktop/socket/node_modules/express/package.json
+15 verbose already installed skipping express@3.1.x /home/jorgeluis/Desktop/socket
+16 verbose cache add [ 'socketio@', null ]
+17 verbose cache add name=undefined spec="socketio@" args=["socketio@",null]
+18 verbose parsed url { protocol: null,
+18 verbose parsed url   slashes: null,
+18 verbose parsed url   auth: null,
+18 verbose parsed url   host: null,
+18 verbose parsed url   port: null,
+18 verbose parsed url   hostname: null,
+18 verbose parsed url   hash: null,
+18 verbose parsed url   search: null,
+18 verbose parsed url   query: null,
+18 verbose parsed url   pathname: 'socketio@',
+18 verbose parsed url   path: 'socketio@',
+18 verbose parsed url   href: 'socketio@' }
+19 verbose cache add name="socketio" spec="" args=["socketio",""]
+20 verbose parsed url { protocol: null,
+20 verbose parsed url   slashes: null,
+20 verbose parsed url   auth: null,
+20 verbose parsed url   host: null,
+20 verbose parsed url   port: null,
+20 verbose parsed url   hostname: null,
+20 verbose parsed url   hash: null,
+20 verbose parsed url   search: null,
+20 verbose parsed url   query: null,
+20 verbose parsed url   pathname: null,
+20 verbose parsed url   path: null,
+20 verbose parsed url   href: '' }
+21 verbose addNamed [ 'socketio', '' ]
+22 verbose addNamed [ null, '' ]
+23 silly lockFile fa004f70-socketio socketio@
+24 verbose lock socketio@ /home/jorgeluis/.npm/fa004f70-socketio.lock
+25 silly addNameRange { name: 'socketio', range: '', hasData: false }
+26 verbose url raw socketio
+27 verbose url resolving [ 'https://registry.npmjs.org/', './socketio' ]
+28 verbose url resolved https://registry.npmjs.org/socketio
+29 info trying registry request attempt 1 at 14:43:55
+30 http GET https://registry.npmjs.org/socketio
+31 http 404 https://registry.npmjs.org/socketio
+32 silly registry.get cb [ 404,
+32 silly registry.get   { server: 'CouchDB/1.2.1 (Erlang OTP/R15B03)',
+32 silly registry.get     date: 'Thu, 04 Apr 2013 18:43:56 GMT',
+32 silly registry.get     'content-type': 'application/json',
+32 silly registry.get     'content-length': '52',
+32 silly registry.get     'cache-control': 'must-revalidate' } ]
+33 silly lockFile fa004f70-socketio socketio@
+34 silly lockFile fa004f70-socketio socketio@
+35 error 404 'socketio' is not in the npm registry.
+35 error 404 You should bug the author to publish it
+35 error 404
+35 error 404 Note that you can also install from a
+35 error 404 tarball, folder, or http url, or git url.
+36 error System Linux 3.5.0-25-generic
+37 error command "/usr/bin/node" "/usr/bin/npm" "install"
+38 error cwd /home/jorgeluis/Desktop/socket
+39 error node -v v0.10.0
+40 error npm -v 1.2.14
+41 error code E404
+42 verbose exit [ 1, true ]

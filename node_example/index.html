@@ -1,0 +1,50 @@
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
+    <script>
+        // Make a socket connection and wait to RECEIVE custom 'news' event
+var socket = io.connect('http://127.0.0.1/');
+
+$(document).ready(function() 
+{
+
+	var user = prompt("Username");
+	socket.emit("addUser", user);
+
+
+	socket.on("connected", function(data)
+     	{
+     		$("#chat").append("Connected: <strong>" + data + "</strong><br>");
+     	});
+
+	$("#send").click(function()
+    {
+    	var message = $("#message").val();
+    	$("#message").val("");
+
+    	socket.emit("addMessage", message);
+    });
+});
+        
+    socket.on("updateChat", function(data)
+     	{
+     		$("#chat").append(data+"<br>");
+     	});
+
+    
+     	
+    </script>
+</head>
+<body>	
+
+
+<input id="message" style="width:200px;" />
+<input type="button" id="send" value="send" />
+
+
+<p id="chat"></p>
+
+</body>
+</html>
