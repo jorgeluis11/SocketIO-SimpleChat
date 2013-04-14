@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Twin Simple Chat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -71,7 +71,7 @@ $(document).ready(function()
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="brand" href="#">Simple Chat</a>
+                <a class="brand" href="#">Twin Simple Chat</a>
                 <div class="nav-collapse">
                     <ul class="nav">
                         <li class="active"><a href="#">Home</a></li>
@@ -83,23 +83,32 @@ $(document).ready(function()
     </div>
 
                
-
+<div class = "container" style = "height:550px;">
     <div class="row-fluid">
 
-        <div class = "span8" style = "box-shadow: 2px 2px 2px gray, -1px 0px 3px gray; overflow-y: scroll; height:300px; margin-left:75px; margin-right:0px;">   
+<div class = "span12"><center><h3>Welcome to the Twin Chat</h3></center></div>
+
+        <div class = "span8" style = "box-shadow: 2px 2px 2px gray, -1px 0px 3px gray; overflow-y: scroll; height:300px; border:1px solid gray;">   
         <p id="chat"></p>
         </div>
-        <div class = "span3" style= "height:300px; box-shadow: 2px 2px 2px gray, -1px 0px 3px gray;"> 
+        <div class = "span3" style= "height:300px; border:1px solid gray; box-shadow: 2px 2px 2px gray, -1px 0px 3px gray;"> 
         </div>
         
-        <div class = "span6" style = "clear:left; margin-top: 10px; margin-left: 555px;"> <!-- Div for input and button to send message -->
-        <input id="message" style ="width: 300px;"/>
-        <input class = "btn btn-primary" type="submit" id="send" value="send" />
+        <div class = "span6 offset5" style = "margin-top: 10px;"> <!-- Div for input and button to send message -->
+        <form action=""></form>
+        <div class="controls">
+    <div class="input-prepend">
+      <span class="add-on"><i class="icon-comment"></i></span>
+        <input class="span10" id="message" type="text">
+        <input class = "btn btn-primary" type="submit" style = "" id="send" value="send" />
+
+    </div>
+    </div>
         </div>
         
         </div><!--/row-->
-           
-<div style = "position: absolute; bottom:0; width: 100%;">
+    </div>       
+<div style = "bottom:0; width: 100%;">
           <hr>
         <footer>
             <center>&copy; Twin Company</center>
