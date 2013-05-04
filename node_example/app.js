@@ -22,17 +22,29 @@ app.get('/', function (req, res) {
 var usernames = {};
 // After any socket connects, SEND it a custom 'news' event
 io.sockets.on('connection', function (socket) {
-     
+  
       socket.on('addUser', function (username)
       {
         socket.username = username;
         usernames[username] = username;
 
-        io.sockets.emit("connected", username)
+        io.sockets.emit("connected", username);
+        io.sockets.emit("userList", usernames);
       });
 
       socket.on('addMessage', function (message)
       {
-        io.sockets.emit('updateChat', "<strong>"+socket.username+ ":</strong> "+ message);
+        io.sockets.emit('updateChat', "<p style='line-height: 1.6em; font-size:16px; margin-top: 4px; margin-left:4px; margin-botton:0px;'><strong style=' text-shadow: 2px 2px 2px #AEB9BD; margin-left:4px;'>"+
+          socket.username+ ": </strong>"+ message+"</p>");
+      });
+
+      // when the user disconnects.. perform this
+      socket.on('disconnect', function(){
+          // remove the username from global usernames list
+          delete usernames[socket.username];
+          // update list of users in chat, client-side
+          io.sockets.emit('userList', usernames);
+          // echo globally that this client has left
+          socket.broadcast.emit('disconnected',  socket.username);
       });
     });
