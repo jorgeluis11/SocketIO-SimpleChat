@@ -32,6 +32,7 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<!--<script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>-->
 
 <script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
    
@@ -94,7 +95,7 @@
 <div class = "container" style = "height:550px;">
     <div class="row-fluid">
 
-<div class = "span12"><center><h3>Welcome to the Twin Chat</h3></center></div>
+<div class = "span12"><center><h2>Welcome to the Twin Chat</h2></center></div>
 
     <div class = "span9" id="chat-wrapper"style = "box-shadow: 2px 2px 2px gray, -1px 0px 3px gray;  border:1px solid gray; height: 460px;">  
         <div id="chat" style="overflow-y: scroll; height: 404px;";>
@@ -107,13 +108,13 @@
                     <i class="icon-comment" >
                     </i>
                 </span>
-                <input id="message" type="text" style = "margin:10px; margin-left:0; margin-right: 0; height: 25px; border-bottom-right-radius: 0px; border-top-right-radius: 0px; width:210%;" placeholder="Write here to comment...">
+                <input id="message" type="text" style = "margin:10px; margin-left:0; margin-right: 0; height: 25px; border-bottom-right-radius: 0px; border-top-right-radius: 0px; width:242%;" placeholder="Write here to comment...">
                 <input class = "btn btn-info" type="submit" style = " margin:10px; margin-left:0px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; height:35px;  width: 70px; font-size:16px;" id="send" value="Post" />
             </div>
         </div>
     </div> 
 
-        <div id="users"class = "span2" style= "height:400px; border:1px solid gray; box-shadow: 2px 2px 2px gray, -1px 0px 3px gray; margin-left:0px; height: 460px;"> 
+        <div id="users"class = "span3" style= "height:400px; border:1px solid gray; box-shadow: 2px 2px 2px gray, -1px 0px 3px gray; margin-left:0px; height: 460px;"> 
         </div>
         
         <div class = "span6 offset5" style = "margin-top: 10px; margin-left: 498px;"> <!-- Div for input and button to send message -->
@@ -136,17 +137,17 @@ var socket = io.connect('http://127.0.0.1/');
 $(document).ready(function() 
 {
 
-    var user = prompt("Username");
-    while(!user || user.length >= 20)
+    var user = prompt("User Name");
+    while(!user || user.length >= 32)
     {
-        user = prompt("Error! Escoja un Username que no este vacio y un tama");
+        user = prompt("Error! \nUsername tiene que ser corto.\nNo puede ser vacio.");
     }
     socket.emit("addUser", user);
 
 
     socket.on("connected", function(data)
         {
-            $("#chat").append("<p style='margin-left:4px'>Connected: <strong style='margin-left:4px;'>" + data + "</strong></p>");
+            $("#chat").append("<p style='margin-left:6px'>Connected: <strong style='margin-left:3px;'>" + data + "</strong></p>");
         });
 
     $("#send").click(function()

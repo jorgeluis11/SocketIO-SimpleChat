@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
 var usernames = {};
 // After any socket connects, SEND it a custom 'news' event
 io.sockets.on('connection', function (socket) {
-  
+
       socket.on('addUser', function (username)
       {
         socket.username = username;
@@ -34,7 +34,8 @@ io.sockets.on('connection', function (socket) {
 
       socket.on('addMessage', function (message)
       {
-        io.sockets.emit('updateChat', "<p style='line-height: 1.6em; font-size:16px; margin-top: 4px; margin-left:4px; margin-botton:0px;'><strong style=' text-shadow: 2px 2px 2px #AEB9BD; margin-left:4px;'>"+
+        io.sockets.emit('updateChat', 
+          "<p style='line-height: 1.6em; font-size:16px; margin-top: 2px; margin-left:6px; margin-botton:0px;'><strong style=' text-shadow: 2px 2px 2px #AEB9BD;'>"+
           socket.username+ ": </strong>"+ message+"</p>");
       });
 
