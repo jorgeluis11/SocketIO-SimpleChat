@@ -148,6 +148,8 @@ $(document).ready(function()
     socket.on("connected", function(data)
         {
             $("#chat").append("<p style='margin-left:6px'>Connected: <strong style='margin-left:3px;'>" + data + "</strong></p>");
+            $("#chat").scrollTop($("#chat")[0].scrollHeight);
+
         });
 
     $("#send").click(function()
@@ -183,6 +185,8 @@ $(document).ready(function()
          socket.on("disconnected", function(data)
         {
             $("#chat").append("<p style='margin-left:4px'>disconnected: <strong style='margin-left:4px;'>" + data + "</strong></p>");
+            $("#chat").scrollTop($("#chat")[0].scrollHeight);
+
         });      
     </script>
 <script>
