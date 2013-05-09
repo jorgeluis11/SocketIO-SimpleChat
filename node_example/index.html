@@ -33,9 +33,7 @@
 <!--<script src="http://lit-dawn-2748.herokuapp.com/socket.io/socket.io.js"></script>-->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 <script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
-<script src="../assets/js/bootstrap.js"></script>  
 
 
 </head>
@@ -95,31 +93,31 @@
 </div>
 
 <div class = "container-fluid" style = "height:550px;">
-    <div class="row-fluid">
         <div class = "span12">
             <center><h2>Welcome to the Twin Chat</h2></center>
         </div>
-        <div class = "span9" id="chat-wrapper"style = "box-shadow: 2px 2px 2px gray, -1px 0px 3px gray;  border:1px solid gray; height: 460px;">  
+        <div class = "span9" id="chat-wrapper" style = "box-shadow: 2px 2px 2px gray, -1px 0px 3px gray;  border:1px solid gray; height: 460px;">  
             <div id="chat" style="overflow-y: scroll; height: 404px;";>
                 <!-- Show everything in chat -->
             </div>
 
-            <div class="controls formfilters" style="background-color: #E9EFF1;">
-                <div class="input-prepend" style="margin:0px;">
-                    <span class="add-on" style="margin:10px; margin-right:0px; height: 25px;">
-                        <i class="icon-comment" >
-                        </i>
-                    </span>
-                    <input class="input-xxlarge"vid="message" type="text" style = "margin:10px; margin-left:0; margin-right: 0; height: 25px; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" placeholder="Write here to comment...">
-                    <input class = "btn btn-info" type="submit" style = " margin:10px; margin-left:0px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; height:35px;  width: 70px; font-size:16px;" id="send" value="Post" />
+            <div class="controls" style="background-color: #E9EFF1;">
+                <div class="pull-right">
+                    <div class="input-prepend" style="margin:0px;">
+                        <span class="add-on" style="margin:10px; margin-right:0px; height: 25px;">
+                            <i class="icon-comment" >
+                            </i>
+                        </span>
+                        <input class="input-xxlarge" id="message" type="text" style = "margin:10px; margin-left:0; margin-right: 0; height: 25px; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" placeholder="Write here to comment...">
+                        <input class = "btn btn-info" type="submit" style = " margin:10px; margin-left:0px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; height:35px;  width: 70px; font-size:16px;" id="send" value="Post" />
+                    </div>
                 </div>
+                <div style="clear:both"></div>
             </div>
         </div> 
 
-        <div id="users"class = "span3" style= "height:400px; border:1px solid gray; box-shadow: 2px 2px 2px gray, -1px 0px 3px gray; margin-left:0px; height: 460px;"> 
+        <div id="users"class = "span3" style= " border:1px solid gray; box-shadow: 2px 2px 2px gray, -1px 0px 3px gray; margin-left:0px; height: 460px;"> 
         </div>
-        
-    </div><!--/row-->
 </div><!-- /Container -->
 
     <div style = "bottom:0; width: 100%;">
@@ -193,10 +191,9 @@
         $("#myModal").modal("show");
     });
 
-    $("#message").click(function()
+    $("#message").focus(function()
     {
         $(".controls").animate({ backgroundColor: "#C3EAF5"}, 250);
-
     });
 
     $("#message").blur(function()
@@ -219,8 +216,10 @@
           $("#send").trigger("click");
         }
     });
+
 </script>  
     <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
     <script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-transition.js"></script>
     <script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-alert.js"></script>
     <script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-modal.js"></script>
