@@ -34,15 +34,7 @@
 <!--<script src="http://lit-dawn-2748.herokuapp.com/socket.io/socket.io.js"></script>-->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<<<<<<< HEAD
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-<!--<script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>-->
-
-<<script src="http://jorgechatv2.herokuapp.com/socket.io/socket.io.js"></script>
-   
-=======
 <script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
->>>>>>> 5b066ee1a4427d940a55ac47247154caa90ef5c0
 </head>
 
 
@@ -113,19 +105,19 @@
 
             <div class="controls container-fluid" style="background-color: #E9EFF1; border-top:1px #ADADAD solid;">
                 <div class="row-fluid">
-                    <div class="input-prepend" style="margin:0px;">
+                    <div class="input-prepend" style="width:100%; margin-bottom:-1px;">
                         <span class="add-on" style="margin:10px; margin-right:0px; height: 25px;">
                             <i class="icon-comment" >
                             </i>
                         </span>
-                        <input class="input-xxlarge row-fluid" id="message" type="text" style = "margin:10px; margin-left:0; margin-right: 0; height: 25px; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" placeholder="Write here to comment...">
+                        <input class="input-xxlarge span10" id="message" type="text" style = "margin:10px; margin-left:0; margin-right: 0; height: 35px; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" placeholder="Write here to comment...">
                         <input class = "btn btn-info" type="submit" style = " margin:10px; margin-left:0px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; height:35px;  width: 70px; font-size:16px;" id="send" value="Post" />
                     </div>
                 </div>
                 <div style="clear:both"></div>
             </div>
         </div> 
-        <div id="users"class = "span3" style= " border:1px solid gray; box-shadow: 2px 2px 2px gray, -1px 0px 3px gray; margin-left:0px; height: 462px;"> 
+        <div id="users"class = "span3 hidden-phone" style= " border:1px solid gray; box-shadow: 2px 2px 2px gray, -1px 0px 3px gray; margin-left:0px; height: 462px;"> 
         </div>
     </div>
 </div><!-- /Container -->
@@ -135,16 +127,7 @@
         <center>&copy; Comunicacion de Datos</center>
     </div>
 
-<<<<<<< HEAD
-     <script>
-        // Make a socket connection and wait to RECEIVE custom 'news' event
- // var socket = io.connect('http://127.0.0.1/');
-var socket = io.connect('http://jorgechatv2.herokuapp.com/');
-$(document).ready(function() 
-{
-=======
 <script>
->>>>>>> 5b066ee1a4427d940a55ac47247154caa90ef5c0
 
     // Make a socket connection and wait to RECEIVE custom 'news' event
     var socket = io.connect('http://127.0.0.1/');
